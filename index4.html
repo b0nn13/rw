@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=500, initial-scale=1">
+
+        <title>Index Treinamento Angular</title>
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+        <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+
+    </head>
+
+    <body ng-app="rw" class="container">
+
+        <div class="panel panel-default" ng-controller="IndexController4">
+
+            <div class="panel-heading">Cadastro de Pessoas</div>
+
+            <div class="panel-body">
+                <form novalidate name="myForm">
+
+                    <div class="row">
+
+                        <div class="col-sm-4">
+                            <div class="form-group"
+                                 ng-class="{'has-error': myForm.tiNome.$invalid && myForm.tiNome.$touched}">
+                                <label class="control-label" for="tiNome">Nome</label>
+                                <input class="form-control"
+                                       type="text"
+                                       id="tiNome"
+                                       name="tiNome"
+                                       ng-model="entidade.nome"
+                                       placeholder="Nome"
+                                       required
+                                       ng-minlength="10"
+                                       maxlength="50">
+
+                                <div class="help-block"
+                                     ng-messages="myForm.tiNome.$error"
+                                     ng-if="myForm.tiNome.$invalid && myForm.tiNome.$touched">
+                                    <div ng-messages-include="app/messages-default.html"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group"
+                                 ng-class="{'has-error': myForm.tiNascimento.$invalid && myForm.tiNascimento.$touched}">
+                                <label class="control-label" for="tiNascimento">Nascimento</label>
+                                <input type="date"
+                                       class="form-control"
+                                       id="tiNascimento"
+                                       name="tiNascimento"
+                                       ng-model="entidade.nascimento"
+                                       required>
+                                <div class="help-block"
+                                     ng-messages="myForm.tiNascimento.$error"
+                                     ng-if="myForm.tiNascimento.$invalid && myForm.tiNascimento.$touched">
+                                    <div ng-messages-include="app/messages-default.html"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group"
+                                 ng-class="{'has-error': myForm.tiSexo.$invalid && myForm.tiSexo.$touched}">
+                                <label class="control-label" for="tiSexo">Sexo</label>
+                                <select id="tiSexo"
+                                        name="tiSexo"
+                                        class="form-control"
+                                        ng-model="entidade.sexo"
+                                        required>
+                                    <option>MASCULINO</option>
+                                    <option>FEMININO</option>
+                                </select>
+                                <div class="help-block"
+                                     ng-messages="myForm.tiSexo.$error"
+                                     ng-if="myForm.tiSexo.$invalid && myForm.tiSexo.$touched">
+                                    <div ng-messages-include="app/messages-default.html"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+
+                <table class="table" ng-if="listaDePessoas.length">
+                    <thead>
+                        <th>Nome</th>
+                        <th>Nascimento</th>
+                        <th>Sexo</th>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="pessoa in listaDePessoas">
+                            <td ng-bind="::pessoa.nome | maiusculo"></td>
+                            <td ng-bind="::pessoa.nascimento | date: 'dd/MM/yyyy'"></td>
+                            <td ng-bind="::pessoa.sexo"></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <div class="panel-footer">
+                    <button class="btn btn-primary" ng-click="salvar()">
+                        Salvar
+                        <i class="fa fa-save"></i>
+                    </button>
+
+                    <button class="btn btn-warning" ng-click="limpar()">
+                        Limpar
+                        <i class="fa fa-eraser"></i>
+                    </button>
+
+                    <button class="btn btn-danger" ng-click="excluir()">
+                        Excluir
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+    <script src="app/app-conf.js"></script>
+    <script src="app/controller/index-controller4.js"></script>
+    <script src="app/service/alert-service.js"></script>
+
+    <script src="app/filter/maisculo.js"></script>
+</html>
