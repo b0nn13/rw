@@ -10,12 +10,17 @@ function IndexController5($scope, $timeout, AlertService, $filter) {
 
     $scope.gridOptions = {};
 
-    $scope.listaDePessoas = [];
+    $scope.listaDePessoas = [
+        {nome: 'FABIO DE OLIVEIRA XAVIER', nascimento: new Date(), sexo: 'MASCULINO'},
+        {nome: 'KARINA DE OLIVEIRA XAVIER', nascimento: new Date(), sexo: 'FEMININO'}
+    ];
     $scope.entidade = {};
 
     $scope.salvar = salvar;
     $scope.limpar = limpar;
     $scope.excluir = excluir;
+
+    $scope.gridItemClick = gridItemClick;
 
 
     iniciar();
@@ -23,9 +28,9 @@ function IndexController5($scope, $timeout, AlertService, $filter) {
     function iniciar() {
         $scope.gridOptions.data = 'listaDePessoas';
         $scope.gridOptions.columnDefs = [
-            { displayName : 'Nome', field : 'nome' },
-            { displayName : 'Data de Nascimento', field: 'nascimento' },
-            { displayName : 'Sexo', field : 'sexo' }
+            { displayName : 'Nome', field : 'nome', cellTemplate: 'app/templates/cell-template.html' },
+            { displayName : 'Data de Nascimento', field: 'nascimento', cellTemplate: 'app/templates/cell-template.html' },
+            { displayName : 'Sexo', field : 'sexo', cellTemplate: 'app/templates/cell-template.html' }
         ];
     }
 
@@ -72,6 +77,10 @@ function IndexController5($scope, $timeout, AlertService, $filter) {
                 field.$setUntouched();
             });
         });
+    }
+
+    function gridItemClick(linhaSelecionada, indexCol, indexRow) {
+        AlertService.showInfo('Nome:' + linhaSelecionada.nome + ' Index Col: ' + indexCol + ' Index Row: ' + indexRow);
     }
 
 };
