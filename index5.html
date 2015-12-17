@@ -17,7 +17,7 @@
 
     <body ng-app="rw" class="container">
 
-        <div class="panel panel-default" ng-controller="IndexController4">
+        <div class="panel panel-default" ng-controller="IndexController5">
 
             <div class="panel-heading">Cadastro de Pessoas</div>
 
@@ -89,7 +89,11 @@
                     </div>
                 </form>
 
-                <table class="table" ng-if="listaDePessoas.length">
+                <div ui-grid="gridOptions">
+
+
+                </div>
+                <!--table class="table" ng-if="listaDePessoas.length">
                     <thead>
                         <th>Nome</th>
                         <th>Nascimento</th>
@@ -104,7 +108,7 @@
                         </tr>
                     </tbody>
 
-                </table>
+                </table-->
 
                 <div class="panel-footer">
                     <button class="btn btn-primary" ng-click="salvar()">
@@ -137,7 +141,7 @@
     <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 
     <script src="app/app-conf.js"></script>
-    <script src="app/controller/index-controller4.js"></script>
+    <script src="app/controller/index-controller5.js"></script>
     <script src="app/service/alert-service.js"></script>
 
     <script src="app/filter/maisculo.js"></script>
