@@ -1,6 +1,3 @@
-/**
- * Created by JCG-003 on 19/12/2015.
- */
 (function () {
     'use strict';
 
@@ -12,12 +9,12 @@
     /* @ngInject */
     function PessoaService() {
         var self = this;
-        self.getNomePessoa = getNomePessoa;
+
+        self.getNomePessoa = getNomePessoa();
 
         function getNomePessoa() {
-            //chama back
+            // CHAMA BACK ENDE
         }
     }
 
 })();
-

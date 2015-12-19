@@ -18,25 +18,13 @@ function config($stateProvider, $urlRouterProvider) {
     var cadastroPessoa= {
         url: '/cadastro',
         templateUrl: 'app/views/pessoa/cadastro-pessoa.html',
-        resolve: {
-            deps: function ($ocLazyLoad) {
-                return $ocLazyLoad.load([
-                    'app/views/pessoa/cadastro-pessoa-controller.js'
-                ])
-            }
-        }
+        resolve: resolveDeps ('app/views/pessoa/cadastro-pessoa-controller.js')
     }
 
     var pesquisaPessoa= {
         url: '/pesquisa',
         templateUrl: 'app/views/pessoa/pesquisa-pessoa.html',
-        resolve: {
-            deps: function ($ocLazyLoad) {
-                return $ocLazyLoad.load([
-                    'app/views/pessoa/pesquisa-pessoa-controller.js'
-                ])
-            }
-        }
+        resolve: resolveDeps ('app/views/pessoa/pesquisa-pessoa-controller.js')
     }
 
     $stateProvider
@@ -46,4 +34,12 @@ function config($stateProvider, $urlRouterProvider) {
         .state('pessoa.pesquisa', pesquisaPessoa);
 
     $urlRouterProvider.otherwise("/");
+
+    function resolveDeps(files) {
+        return {
+            deps: function ($ocLazyLoad) {
+                return $ocLazyLoad.load(files);
+            }
+        }
+    }
 }
