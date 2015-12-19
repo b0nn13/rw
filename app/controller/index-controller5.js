@@ -32,7 +32,8 @@ function IndexController5($scope, $timeout, AlertService, $filter) {
         $scope.gridOptions.columnDefs = [
             { displayName : 'Nome', field : 'nome', cellTemplate: 'app/templates/cell-template.html' },
             { displayName : 'Data de Nascimento', field: 'nascimento', cellTemplate: 'app/templates/cell-template.html' },
-            { displayName : 'Sexo', field : 'sexo', cellTemplate: 'app/templates/cell-template.html' }
+            { displayName : 'Sexo', field : 'sexo', cellTemplate: 'app/templates/cell-template.html' },
+            { displayName: 'Excluir', field: 'excluir', cellTemplate:'app/templates/cell-template-delete.html'}
         ];
     }
 
@@ -61,7 +62,8 @@ function IndexController5($scope, $timeout, AlertService, $filter) {
 
     }
 
-    function excluir () {
+    function excluir (index) {
+        $scope.listaDePessoas.splice(index,1);
 
     }
 
