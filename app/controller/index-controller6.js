@@ -8,10 +8,10 @@
         .module('rw')
         .controller('IndexController6', IndexController6);
 
-    IndexController6.$inject = ['AlertService'];
+    IndexController6.$inject = [];
 
     /* @ngInject */
-    function IndexController6(AlertService) {
+    function IndexController6() {
         var vm = this;
         vm.title = 'IndexController6';
 
@@ -20,7 +20,7 @@
         ////////////////
 
         function activate() {
-            console.debug('IndexController6.activate'
+            console.debug('IndexController6.activate');
         }
     }
 

@@ -32,4 +32,6 @@ function config($stateProvider, $urlRouterProvider) {
         .state('pessoa', pessoa)
         .state('pessoa.cadastro', cadastroPessoa)
         .state('pessoa.pesquisa', pesquisaPessoa);
+
+    $urlRouterProvider.otherwise("/");
 }
