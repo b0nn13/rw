@@ -2,7 +2,7 @@
  * Created by JCG-003 on 16/12/2015.
  */
 angular.module('rw')
-    .service('AlertService',AlertService)
+    .service('AlertService',AlertService);
 
 function AlertService(toastr) {
 

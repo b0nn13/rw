@@ -4,6 +4,7 @@
 angular.module('rw')
     .controller('IndexControllerStyle', IndexControllerStyle);
 
+/* @ngInject */
 function IndexControllerStyle($scope){
     $scope.nome = '';
     $scope.myStyle = {};
@@ -17,6 +18,6 @@ function IndexControllerStyle($scope){
         } else {
             $scope.myClass = 'verde';
         }
-    })
+    });
 
-};
+}

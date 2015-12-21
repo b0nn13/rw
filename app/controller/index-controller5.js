@@ -4,8 +4,7 @@
 angular.module('rw')
     .controller('IndexController5', IndexController5);
 
-IndexController5.$inject = ['$scope', '$timeout', 'AlertService', '$filter'];
-
+/* @ngInject */
 function IndexController5($scope, $timeout, AlertService, $filter) {
 
     $scope.gridOptions = {};
@@ -31,7 +30,8 @@ function IndexController5($scope, $timeout, AlertService, $filter) {
         $scope.gridOptions.rowTemplate = 'app/templates/row-template.html';
         $scope.gridOptions.columnDefs = [
             { displayName : 'Nome', field : 'nome', cellTemplate: 'app/templates/cell-template.html' },
-            { displayName : 'Data de Nascimento', field: 'nascimento', cellTemplate: 'app/templates/cell-template.html' },
+            { displayName : 'Data de Nascimento', field: 'nascimento',
+                cellTemplate: 'app/templates/cell-template.html' },
             { displayName : 'Sexo', field : 'sexo', cellTemplate: 'app/templates/cell-template.html' },
             { displayName: 'Excluir', field: 'excluir', cellTemplate:'app/templates/cell-template-delete.html'}
         ];
@@ -94,4 +94,4 @@ function IndexController5($scope, $timeout, AlertService, $filter) {
         return myStyle;
     }
 
-};
+}

@@ -8,8 +8,6 @@
         .module('rw')
         .controller('IndexController6', IndexController6);
 
-    IndexController6.$inject = [];
-
     /* @ngInject */
     function IndexController6() {
         var vm = this;

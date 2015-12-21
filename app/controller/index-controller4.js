@@ -4,8 +4,7 @@
 angular.module('rw')
     .controller('IndexController4', IndexController4);
 
-IndexController4.$inject = ['$scope', '$timeout', 'AlertService', '$filter'];
-
+/* @ngInject */
 function IndexController4($scope, $timeout,AlertService, $filter) {
 
     $scope.listaDePessoas = [];
@@ -61,4 +60,4 @@ function IndexController4($scope, $timeout,AlertService, $filter) {
         });
     }
 
-};
+}

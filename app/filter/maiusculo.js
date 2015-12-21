@@ -11,5 +11,5 @@ function maiusculo() {
             return value.toUpperCase();
         }
         return value;
-    }
+    };
 }

@@ -7,25 +7,25 @@ function config($stateProvider, $urlRouterProvider) {
     var home = {
         url: '/',
         templateUrl: 'app/views/home/home.html'
-    }
+    };
 
     var pessoa = {
         abstract: true,
         url: '/pessoa',
         template: '<ui-view/>'
-    }
+    };
 
     var cadastroPessoa= {
         url: '/cadastro',
         templateUrl: 'app/views/pessoa/cadastro-pessoa.html',
         resolve: resolveDeps ('app/views/pessoa/cadastro-pessoa-controller.js')
-    }
+    };
 
     var pesquisaPessoa= {
         url: '/pesquisa',
         templateUrl: 'app/views/pessoa/pesquisa-pessoa.html',
         resolve: resolveDeps ('app/views/pessoa/pesquisa-pessoa-controller.js')
-    }
+    };
 
     $stateProvider
         .state('home', home)
@@ -33,13 +33,13 @@ function config($stateProvider, $urlRouterProvider) {
         .state('pessoa.cadastro', cadastroPessoa)
         .state('pessoa.pesquisa', pesquisaPessoa);
 
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise('/');
 
     function resolveDeps(files) {
         return {
             deps: function ($ocLazyLoad) {
                 return $ocLazyLoad.load(files);
             }
-        }
+        };
     }
 }

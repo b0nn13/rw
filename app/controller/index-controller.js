@@ -4,6 +4,7 @@
 angular.module('rw')
     .controller('IndexController', IndexController);
 
+/* @ngInject */
 function IndexController($scope){
     $scope.nome =  'Fabão';
 
@@ -12,4 +13,4 @@ function IndexController($scope){
     function onClickTest() {
         $scope.nome = 'FABÃO ALTEROU TUDO';
     }
-};
+}
