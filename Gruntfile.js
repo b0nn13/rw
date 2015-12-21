@@ -35,13 +35,13 @@
                         'build/app/**/*.js',
                         '!build/app/**/*-controller.js'
                     ],
-                    dest: 'build/app-min.js'
+                    dest: 'build/app.js'
                 },
                 appCss: {
                     src: [
                         'build/app/**/*.css',
                     ],
-                    dest: 'build/app-min.css'
+                    dest: 'build/app.css'
                 }
             },
 
