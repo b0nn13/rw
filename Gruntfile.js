@@ -19,7 +19,7 @@
                     files: [
                         {
                             expand: true,
-                            src: ['app/**'],
+                            src: ['app/**', '*.html'],
                             dest: 'build/'
                         }
                     ]
@@ -35,13 +35,13 @@
                         'build/app/**/*.js',
                         '!build/app/**/*-controller.js'
                     ],
-                    dest: 'build/app.js'
+                    dest: 'build/app-min.js'
                 },
                 appCss: {
                     src: [
                         'build/app/**/*.css',
                     ],
-                    dest: 'build/app.css'
+                    dest: 'build/app-min.css'
                 }
             },
 
@@ -63,9 +63,38 @@
                     ]
                 }
             },
-            clean: {
+            uglify: {
                 app: {
-                    src: 'build'
+                    files: [
+                        {
+                            expand: true,
+                            src: ['build/**/*.js']
+                        }
+                    ]
+                }
+            },
+            cssmin: {
+                app: {
+                    files: [
+                        {
+                            expand: true,
+                            src: ['build/**/*.css']
+                        }
+                    ]
+                }
+            },
+            htmlmin: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                app: {
+                    files: [
+                        {
+                            expand: true,
+                            src: ['build/**/*.html']
+                        }
+                    ]
                 }
             }
         });
@@ -75,7 +104,10 @@
                 'clean',
                 'copy',
                 'ngAnnotate',
-                'concat'
+                'concat',
+                'uglify',
+                'cssmin',
+                'htmlmin'
             ]
         );
 
