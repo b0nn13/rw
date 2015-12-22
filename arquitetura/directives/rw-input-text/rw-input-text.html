@@ -1,0 +1,24 @@
+<div ng-class="myClass">
+    <div class="form-group"
+         ng-class="{'has-error': myForm[inputName].$touched && myForm[inputName].$invalid}">
+        <label class="control-label"
+               for="{{::inputName}}">
+            <label ng-bind="::label"></label>
+            <span ng-show="ngRequired" class="text-danger">*</span>
+        </label>
+        <input id="{{::inputName}}"
+               name="{{::inputName}}"
+               type="text"
+               class="form-control"
+               placeholder="{{::placeholder}}"
+               ng-model="ngModel"
+               ng-required="ngRequired"
+               ng-maxlength="ngMaxlength"
+               ng-minlength="ngMinlength">
+
+        <div class="help-block" ng-messages="myForm[inputName].$error"
+             ng-if="myForm[inputName].$invalid && myForm[inputName].$touched">
+            <div ng-messages-include="arquitetura/directives/messages/messages-default.html"></div>
+        </div>
+    </div>
+</div>

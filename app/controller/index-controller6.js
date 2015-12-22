@@ -11,13 +11,11 @@
     /* @ngInject */
     function IndexController6() {
         var vm = this;
-        vm.title = 'IndexController6';
+        vm.entidade = {};
 
-        activate();
+        iniciar();
 
-        ////////////////
-
-        function activate() {
+        function iniciar() {
             console.debug('IndexController6.activate');
         }
     }

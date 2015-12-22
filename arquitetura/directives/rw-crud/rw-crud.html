@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <span ng-bind="::titulo"></span>
+    </div>
+
+    <div class="panel-body">
+        <form novalidate name="myForm">
+            <div ng-transclude></div>
+        </form>
+
+        <div class="panel-footer">
+            <button class="btn btn-primary" ng-click="onSalvar()">
+                Salvar
+                <i class="fa fa-save"></i>
+            </button>
+
+            <button class="btn btn-warning" ng-click="onLimpar()">
+                Limpar
+                <i class="fa fa-eraser"></i>
+            </button>
+
+            <button class="btn btn-danger" ng-click="onExcluir()">
+                Excluir
+                <i class="fa fa-trash"></i>
+            </button>
+        </div>
+
+    </div>
+
+</div>

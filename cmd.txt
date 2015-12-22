@@ -1,0 +1,26 @@
+// COMANDO INSTALL
+
+bower install angular --save
+bower install bootstrap --save
+bower install font-awesome --save
+bower install angular-messages --save
+bower install angular-toastr --save
+bower install angular-ui-grid --save
+
+bower install angular-material --save
+bower install oclazyload --save
+npm install -g grunt-cli
+npm install grunt --save
+npm install matchdep --save-dev
+npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-jshint --save-dev
+npm install grunt-contrib-copy --save-dev
+npm install grunt-contrib-concat --save-dev
+npm install grunt-contrib-clean --save-dev
+npm install grunt-ng-annotate --save-dev
+npm install grunt-contrib-uglify --save-dev
+npm install grunt-contrib-cssmin --save-dev
+npm install grunt-contrib-htmlmin --save-dev
+
+
+// COMANDOS GIT

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css"/>
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css"/>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+
+    <script src="app/app-conf.js"></script>
+
+    <script src="arquitetura/directives/ola-mudo/ola-mundo.js"></script>
+    <script src="arquitetura/directives/rw-input-text/rw-input-text.js"></script>
+    <script src="arquitetura/directives/rw-crud/rw-crud.js"></script>
+
+    <script src="app/controller/index-controller7.js"></script>
+    <script src="app/service/alert-service.js"></script>
+    <script src="app/filter/maiusculo.js"></script>
+
+    <script src="app/views/pessoa/pessoa-service.js"></script>
+    <script src="app/views/pessoa/cadastro-pessoa-controller.js"></script>
+    <script src="app/views/pessoa/pesquisa-pessoa-controller.js"></script>
+</head>
+<body ng-app="rw">
+<div ng-controller="IndexController7 as vm" class="container">
+
+    <rw-crud titulo="Cadastro de pessoa (diretiva)"
+             salvar="vm.salvarPessoa()"
+             excluir="vm.excluirPessoa()"
+             limpar="vm.limparPessoa()">
+
+        <div class="row">
+            <rw-input-text label="Nome"
+                           placeholder="Nome da pessoa"
+                           ng-model="vm.entidade.nome"
+                           ng-required="true"
+                           ng-maxlength="10"
+                           ng-minlength="3"
+                           colspan="3">
+            </rw-input-text>
+
+            <rw-input-text label="Sobrenome"
+                           placeholder="Sobrenome da pessoa"
+                           ng-model="vm.entidade.sobrenome"
+                           colspan="3">
+            </rw-input-text>
+
+            <br><br>
+            {{vm.entidade}}
+        </div>
+
+    </rw-crud>
+</div>
+</body>
+</html>

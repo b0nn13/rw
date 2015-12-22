@@ -48,7 +48,11 @@
             clean: {
                 app: {
                     src: 'build'
+                },
+                build: {
+                    src: ['!build/views']
                 }
+
             },
             ngAnnotate: {
                 options: {
