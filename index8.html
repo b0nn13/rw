@@ -14,6 +14,7 @@
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="bower_components/angular-keycode/angular-keycode.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
 
@@ -22,6 +23,8 @@
     <script src="arquitetura/directives/ola-mudo/ola-mundo.js"></script>
     <script src="arquitetura/directives/rw-input-text/rw-input-text.js"></script>
     <script src="arquitetura/directives/rw-crud/rw-crud.js"></script>
+    <script src="arquitetura/service/rw-service.js"></script>
+    <script src="arquitetura/directives/rw-enter/rw-enter.js"></script>
 
     <script src="app/controller/index-controller7.js"></script>
     <script src="app/service/alert-service.js"></script>
@@ -35,9 +38,8 @@
 <div ng-controller="IndexController7 as vm" class="container">
 
     <rw-crud titulo="Cadastro de pessoa (diretiva)"
-             salvar="vm.salvarPessoa()"
-             excluir="vm.excluirPessoa()"
-             limpar="vm.limparPessoa()">
+             service="vm.rwService"
+            rw-enter="vm.pressEnter()">
 
         <div class="row">
             <rw-input-text label="Nome"

@@ -5,5 +5,6 @@ angular.module('rw',['ngMessages',
                     'toastr',
                     'ui.grid',
                     'ui.router',
-                    'oc.lazyLoad']);
+                    'oc.lazyLoad',
+                    'angular-keycode']);
 

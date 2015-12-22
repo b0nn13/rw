@@ -7,13 +7,14 @@
 
 
     /* @ngInject */
-    function PessoaService() {
+    function PessoaService(RwService) {
         var self = this;
 
-        self.getNomePessoa = getNomePessoa();
+        self.getRwService = getRwService;
 
-        function getNomePessoa() {
-            // CHAMA BACK ENDE
+        function getRwService() {
+            var rws = new RwService('pessoaRest');
+            return rws;
         }
     }
 

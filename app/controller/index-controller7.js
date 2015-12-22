@@ -9,29 +9,16 @@
         .controller('IndexController7', IndexController7);
 
     /* @ngInject */
-    function IndexController7(AlertService) {
+    function IndexController7(AlertService, PessoaService) {
 
         var vm = this;
 
-        vm.salvarPessoa = salvarPessoa;
-        vm.excluirPessoa = excluirPessoa;
-        vm.limparPessoa = limparPessoa;
+        vm.rwService = PessoaService.getRwService();
 
-        vm.entidade = {};
+        vm.pressEnter = pressEnter;
 
-        function salvarPessoa() {
-            AlertService.showSucess('Registro gravado com sucesso!');
-            vm.entidade = {};
-        }
-
-        function excluirPessoa() {
-            AlertService.showError('Registro excluído com sucesso!');
-            vm.entidade = {};
-        }
-
-        function limparPessoa() {
-            AlertService.showInfo('Formulário limpo');
-            vm.entidade = {};
+        function pressEnter () {
+            AlertService.showInfo('Enter pressionado');
         }
     }
 

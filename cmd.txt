@@ -24,3 +24,9 @@ npm install grunt-contrib-htmlmin --save-dev
 
 
 // COMANDOS GIT
+git status
+git add .
+git rm .idea/* -f
+git commit -m "comment"
+git push origin master
+git pull
