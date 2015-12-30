@@ -6,9 +6,12 @@ bower install font-awesome --save
 bower install angular-messages --save
 bower install angular-toastr --save
 bower install angular-ui-grid --save
-
+bower install angular-keycode --save
+bower install angular-local-storage --save
 bower install angular-material --save
 bower install oclazyload --save
+bower install angular-loading-bar --save
+
 npm install -g grunt-cli
 npm install grunt --save
 npm install matchdep --save-dev
@@ -21,6 +24,8 @@ npm install grunt-ng-annotate --save-dev
 npm install grunt-contrib-uglify --save-dev
 npm install grunt-contrib-cssmin --save-dev
 npm install grunt-contrib-htmlmin --save-dev
+npm install grunt-ngdocs --save-dev
+npm install grunt-contrib-less --save-dev
 
 
 // COMANDOS GIT

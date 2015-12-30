@@ -3,11 +3,11 @@
  */
 (function () {
     'use strict';
-    angular.module('rw')
-        .directive('rwEnter', rwEnter);
+    angular.module('ooit.arq')
+        .directive('ooEnter', ooEnter);
 
 
-    function rwEnter(KeyCode){
+    function ooEnter(KeyCode){
         return {
             restrict: 'A',
             link: link

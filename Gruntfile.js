@@ -100,6 +100,24 @@
                         }
                     ]
                 }
+            },
+            ngdocs: {
+                options: {
+                    dest: 'docs',
+                    title: 'RW',
+                    html5Mode: false
+                },
+                arquitetura: {
+                    src: ['arquitetura/**/*.js'],
+                    title: 'API'
+                }
+            },
+            less: {
+                app: {
+                    files: {
+                        'arquitetura/less/rw-style.css': 'arquitetura/less/rw-style.less'
+                    }
+                }
             }
         });
 

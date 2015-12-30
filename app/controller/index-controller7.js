@@ -9,7 +9,7 @@
         .controller('IndexController7', IndexController7);
 
     /* @ngInject */
-    function IndexController7(AlertService, PessoaService) {
+    function IndexController7(AlertService, PessoaService, SessionService) {
 
         var vm = this;
 
@@ -18,7 +18,10 @@
         vm.pressEnter = pressEnter;
 
         function pressEnter () {
+            SessionService.set('valor', 'testeValoe');
             AlertService.showInfo('Enter pressionado');
+            AlertService.showSucess('Session Storage:' + SessionService.get('valor'));
+
         }
     }
 

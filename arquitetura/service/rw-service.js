@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('rw')
+    angular.module('rwServices')
         .factory('RwService', RwService);
 
 

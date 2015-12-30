@@ -18,7 +18,7 @@
 
         <div class="help-block" ng-messages="myForm[inputName].$error"
              ng-if="myForm[inputName].$invalid && myForm[inputName].$touched">
-            <div ng-messages-include="arquitetura/directives/messages/messages-default.html"></div>
+            <ng-messages-include src="{{ooMessageTemplate}}"></ng-messages-include>
         </div>
     </div>
 </div>
